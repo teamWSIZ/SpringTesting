@@ -1,3 +1,2 @@
-# Czysty projekt do Spring MVC
+# Projekt do testowania testów (w tym MVC Spring)
 
-Projekt skompilować do .war'a i uruchomić na serwerze aplikacyjnym (Tomcat, Wildfly, Jetty)
