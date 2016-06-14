@@ -1,0 +1,5 @@
+* Separate text-context.xml's in src/test/resources
+
+* `classpath = /src/test`
+
+* 
