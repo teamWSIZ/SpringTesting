@@ -1,0 +1,16 @@
+
+
+Notes on testing:
+
+Proper way for service layer: 
+* broad repos must be mocked
+  * best: in memory DB-like, with sql scripts for setup
+  * else1: own classes which implement same interface as true repo, and are substituted for real one
+  * else2: own classes joined to tests via mockito
+  * else: mockito fully mocked
+  
+  
+  
+Design antipatterns: 
+* multiplying Service classes --> O(N**2) links in this layer
+* 
