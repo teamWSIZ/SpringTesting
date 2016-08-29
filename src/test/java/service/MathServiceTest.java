@@ -32,4 +32,10 @@ public class MathServiceTest {
         assertThat(service.add(5, 5)).isEqualTo(10);
 
     }
+
+    @Test
+    public void getEeeTest() {
+        assertThat(service.getEleven()).isEqualTo(15);
+
+    }
 }

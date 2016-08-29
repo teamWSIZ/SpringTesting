@@ -7,8 +7,24 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <bean id="myConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <array>
+                <value>classpath:my.properties</value>
+                <value>classpath:log4j.properties</value>
+            </array>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"></property>
+    </bean>
+
     <!--Gdzie szukac Bean-ów oznaczonych przez @Component-->
     <context:component-scan base-package="standalone, service"/>
 
+    <bean id="eleven" class="service.Liczba">
+        <constructor-arg name="x" value="${eee:11}"/>
+        <!--Na środowisku prod, PropertyPlaceholderConfigurer bierze z obecnego /main/resources-->
+        <!--Podczas testów może to być nadpisane przez /test/resources-->
+        <!--todo: h2 database in test, postgres in prod-->
+    </bean>
 
 </beans>
